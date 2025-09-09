@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>// LOGS // SYSTEM ARCHIVES</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #0d0000;
+            color: #ff0000;
+            overflow-x: hidden;
+            background-image: linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: pulse 10s infinite;
+        }
+
+        .container-glow {
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 0 0 20px rgba(255, 0, 0, 0.4) inset;
+            border: 1px solid #ff0000;
+            border-radius: 8px;
+            animation: glow-flicker 2s infinite alternate;
+        }
+
+        .btn-glow {
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+            transition: all 0.3s ease-in-out;
+            border: 1px solid #ff0000;
+        }
+        
+        .btn-glow:hover {
+            box-shadow: 0 0 25px rgba(255, 0, 0, 1.0);
+            transform: scale(1.05);
+        }
+
+        .title-glitch {
+            text-shadow: 0 0 10px #ff0000;
+            animation: text-flicker 1.5s infinite alternate;
+        }
+
+        @keyframes glow-flicker {
+            0% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 0 0 20px rgba(255, 0, 0, 0.4) inset; }
+            50% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.4), 0 0 15px rgba(255, 0, 0, 0.3) inset; }
+            100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 0 0 20px rgba(255, 0, 0, 0.4) inset; }
+        }
+
+        @keyframes text-flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 0 0 4px #ff0000;
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+                opacity: 0.8;
+            }
+        }
+        
+        @keyframes pulse {
+            0% { background-position: 0 0; }
+            100% { background-position: -200px -200px; }
+        }
+
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto">
+        
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-red-600 mb-4 md:mb-0 title-glitch">
+                // SYSTEM LOGS //
+            </h1>
+            <a href="https://manojkr.site" 
+               target="_blank" 
+               class="bg-black text-red-500 font-semibold py-3 px-6 rounded-full transition-all duration-300 btn-glow">
+                // MY PORTFOLIO //
+            </a>
+        </header>
+
+        <!-- Main content container for blog links -->
+        <div id="blog-links-container" class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+            <!-- System Design Blog Link Card -->
+            <div class="bg-black p-6 rounded-xl container-glow transition-shadow duration-300">
+                <a href="https://medium.com/@kr1578481/learn-system-design-with-me-924a85f1f6c1" target="_blank" class="block">
+                    <h2 class="text-xl font-bold text-red-400 mb-2">// Why System Design Matters //</h2>
+                    <p class="text-sm text-red-600 mb-4">System design isn’t just a buzzword that shows up in job interviews, it’s the blueprint behind how large-scale applications actually work in the real world.</p>
+                </a>
+            </div>
+
+            <!-- Example Blog Link Card 2 -->
+            <div class="bg-black p-6 rounded-xl container-glow transition-shadow duration-300">
+                <a href="https://example.com/your-blog-2" target="_blank" class="block">
+                    <h2 class="text-xl font-bold text-red-400 mb-2">//  Back-of-the-Envelope Estimation //</h2>
+                    <p class="text-sm text-red-600 mb-4">Back-of-the-envelope estimation is a crucial skill in system design interviews. It involves making quick, rough calculations to assess system capacity or performance. According to Jeff Dean, Google Senior Fellow, these estimates help evaluate whether designs meet requirements through thought experiments and common performance benchmarks.</p>
+                </a>
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>
